@@ -3,7 +3,7 @@
 Helps map out the `logical sequence` of a possible solution in a `visual` way
 ___
 
-[flowchart](/lesson-2/flowchart_components.jpg)
+[flowchart](/flowchart_components.jpg)
 
 `Start`
 
@@ -113,7 +113,7 @@ END
 
 - allows us to focus on a narrow-scope for clarity and organization
 
-[flowchart with subprocess](/lesson-2/flowchart_large_numbers.png)
+[flowchart with subprocess](/flowchart_large_numbers.png)
 
 
 - thinking about how detailed the chart and words in a flowchart and pseudocode should be, as well as `what you can extract to sub-processes` are details to think about when designing the solution to a problem
