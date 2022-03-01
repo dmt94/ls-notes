@@ -1,6 +1,6 @@
 #### Debugging ####
 
-Temperament is important. Dealing with frustration is a critical aspect of learning to program.
+Temperament is important. Dealing with frustration is a critical aspect of learning to program (and in life).
 
 **Key to debugging:**
 
