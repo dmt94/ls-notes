@@ -4,7 +4,7 @@ Terms:
 
 **`boolean`** : object whose only purpose is to convey whether it is `true` or `false`
 
-```
+```javascript
 let a = Boolean('Hi');
 console.log(a);    // true
 ```
@@ -19,7 +19,7 @@ ___
 
 You would evaluate an expression that should evaluate as either `true` or `false` in a conditional expression.
 
-```
+```javascript
 let num = 5;
 
 if (num < 10) { // same as `if ((num < 10) === true)`
