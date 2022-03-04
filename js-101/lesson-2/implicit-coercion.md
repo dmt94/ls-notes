@@ -36,7 +36,7 @@ true
 
 <br>
 
-**Number and String**
+**Number and Boolean**
 
 ```javascript
 > 1 == true
@@ -134,6 +134,9 @@ true
 
 3. Empty array `[]` is coerced into an empty string `''`
 
+Arrays will convert into a string.
+If elements exist, it converts into string
+
 ```javascript
 > [] == 0
 true
@@ -163,9 +166,11 @@ true
 '' == 0    // true
 
 
-[true] == 1               // false
+[true] == 1               // false : [true] -> 'true' !== 1
 
 [true] == 'true'          // true 
+
+['0'] == false            // true : false -> 0 == '0' (string '0' -> 0)
 
 
 ['example'] == 'example'  // true 
@@ -183,7 +188,13 @@ undefined == null        // true
 
 [undefined] == [null]    // false
 
-['undefined', 'undefined'] == 'undefined,undefined'   // true
+[null] == 'null'         // false
+
+[null] == null           // false
+
+[undefined] == 'undefined' // false
+
+['undefined', 'undefined'] == 'undefined,undefined'   // true ('undefined' are strings inside the array here)
 ```
 
 <br>
@@ -256,7 +267,17 @@ null + null;    // 0
 42 + {};        // "42[object Object]"
 ```
 
-- both operands are converted to `strings` and `concatenated` together
+- both operands are converted to `strings` and `concatenated` together with `+` operator
+
+<br>
+
+- `-` operator will coerce its operands and perform an arithmetic operation on them :
+
+```javascript
+[0] - true      // -1 : [0] -> '0' - 1 -> 0 - 1 = -1
+[] - 5          // -5
+[4] - '4'       // 0 : [4] => '4' - '4' , coerce to Number types
+```
 
 ___
 
