@@ -1,6 +1,5 @@
 #### Truthiness
 
-Terms:
 
 **`boolean`** : object whose only purpose is to convey whether it is `true` or `false`
 
@@ -60,4 +59,4 @@ Logical operators **`&&`** and **`||`** exhibit `short-circuiting`:
 
 Essentially, `truthiness` means that we can use any `condition` or `logical expression` 
 
-JS considers any non-zero (and non NaN) number to be `truthy`. `This does not mean that it equals to boolean value true`
+JS considers any non-zero (and non NaN) number to be `truthy`. `This does not mean that it equals to boolean value` **`true`**

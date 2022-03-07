@@ -51,10 +51,10 @@ ___
 
 #### Steps to Debugging ####
 
-1. Reproduce the Error
+**1. Reproduce the Error**
 
 
-2. Determine Boundaries of Error
+**2. Determine Boundaries of Error**
 
 - tweak data that caused the error
 
@@ -65,7 +65,7 @@ ___
 - main idea: get scope of error and determine **boundaries** of the problem
 
 
-3. Trace the Code
+**3. Trace the Code**
 
 - trace the code backwards
 - check what is passed as arguments to functions
@@ -73,18 +73,18 @@ ___
     - identify the area where an error **originates**
 
 
-4. Understand the Problem Well
+**4. Understand the Problem Well**
 
 - `inspect` values at each step at the area `where error originates`
 
 
-5. Implement a Fix
+**5. Implement a Fix**
 
 - `try/catch error`
-    - if you are using a library or code that you CAN'T modify, you can attempt to do implement a `try/catch error`
+    - if you are using a library or code that you CAN'T modify, you can attempt to implement a `try/catch error`
 
 
-6. Test the Fix
+**6. Test the Fix**
 
 - Verify code is fixed by implementing more tests
 

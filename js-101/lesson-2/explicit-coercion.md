@@ -35,7 +35,7 @@ Number([3])             // 3 (single element number)
 Number([3, 2])          // NaN (multiple elements)
 Number([undefined])     // 0 (single element 'undefined' in array)
 Number([null])          // 0 (single element 'null' in array)
-Number(['no'])          // NaN (single element with a string that can't coerce into a number)
+Number(['no'])          // NaN (single element with a string that can't be coerced into a number)
 
 Number('food')          // NaN
 Number(undefined)       // NaN
@@ -89,7 +89,7 @@ parseInt('11000100', 2) // 196
 
 - accepts decimal string arguments
 
-- `parseFloat` includes the first `.` period character that is part of a decimal
+- `parseFloat` includes the **first** `.` period character that is part of a decimal
 
 ```javascript
 parseFloat('12 grams') // 12, stopped parsing after running into ' ' character
@@ -102,12 +102,6 @@ parseFloat('22.11 mg') // 22.11
 **`+ operator`**
 
 - they can act as either a `unary operator` or `binary operator`:
-
-```javascript 
-5 - 3 // '-' acts as a binary operator that subtracts 3 from 5
-
--4    // '-' acts as a unary operator, to obtain the negative of the number 4
-```
 
 - unary operator `+` attempts to `coerce` a value to a `number` (allows integers and decimals) : 
 
@@ -129,7 +123,17 @@ parseFloat('22.11 mg') // 22.11
 = NaN
 ```
 
+- unary operator `-` can act as a binary operator or unary operator :
+
+
+```javascript 
+5 - 3 // '-' acts as a binary operator that subtracts 3 from 5
+
+-4    // '-' acts as a unary operator, to obtain the negative of the number 4
+```
+
 - unary operator `-` also attempts to `coerce` a value to a `number` :
+
 
 ```javascript
 
@@ -174,19 +178,19 @@ TypeError: Cannot read properties of undefined
 
 ```
 
-- we first assign `42` to a variable before we call `toString()` because `.` is interpreted to be part of a `floating point number`.
+- we first assign `27` to a variable before we call `toString()` because `.` is interpreted to be part of a `floating point number`.
 
 ```javascript
-console.log(22.toString()) // SyntaxError: Invalid or unexpected token
+console.log(27.toString()) // SyntaxError: Invalid or unexpected token
 ```
 
 **Alternatives**
 
+- can wrap literal numeric value with parenthesis
+
 ```javascript
 console.log((27).toString()) // '27'
 ```
-
-<br>
 
 <br>
 
@@ -199,14 +203,12 @@ console.log(false.toString())  // 'false'
 
 <br>
 
-<br>
-
 ***Array => String***
 
 - converts every element of an array to a string, then `concatenates` them all with a `,` between each string
 
 ```javascript
-console.log([12, 22, 32].toString())   // '1,2,3'
+console.log([12, 22, 32].toString())   // '12,22,32'
 ```
 
 - `Array.prototype.toString` treats `null` and `undefined` elements as `empty values`
@@ -215,7 +217,6 @@ console.log([12, 22, 32].toString())   // '1,2,3'
 console.log([1, null, 2, undefined, 3].toString())   // '1,,2,,3'
 ```
 
-<br>
 
 <br>
 
@@ -250,8 +251,8 @@ ___
 
 **Template Literals**
 
-- JS `IMPLICITLY` coerces interpolation expressions like `${evaluate}` to string values
+- JS `IMPLICITLY` coerces interpolation expressions like `${evaluate}` to **string values**
 
 ```javascript
-console.log(`3 * 3 is equal to ${3 * 3}.`); // '3 * 3 is equal to 9.'
+console.log(`3 * 3 is equal to ${3 * 3}.`); // '3 * 3 is equal to 9.' : value 9 is a string, like the rest of string
 ```

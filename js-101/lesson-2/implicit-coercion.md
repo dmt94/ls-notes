@@ -190,28 +190,43 @@ undefined == null        // true
 
 [null] == 'null'         // false
 
-[null] == null           // false
+[null] == null           // false: [null] -> 0 not equal to null!
 
 [undefined] == 'undefined' // false
 
 ['undefined', 'undefined'] == 'undefined,undefined'   // true ('undefined' are strings inside the array here)
 ```
 
+**Be mindful that `0` and `-0` are treated as equal in both non-strict and strict equality**
+
+```javascript
+
+console.log(-[undefined] == 0);  //true : -0 and 0
+console.log(-[undefined] === -0); //true : -0 and -0
+
+console.log(Object.is(-[undefined], -0)); //true
+console.log(Object.is(-[undefined], 0));  //false
+```
+
 <br>
 
 #### Review for `==` ####
 
-1. `Number` and `String` : 
+1. `Number == String` : 
 
     - `string` -> `number`
 
-2. `Boolean` and `Any` : 
+<br>
+
+2. `Boolean == Any` : 
 
     - `boolean` -> `number`
 
     - `number` **==** `value`
 
-3. `Object` and `Primitive` : 
+<br>
+
+3. `Object == Primitive` : 
 
     - `object` -> `primitive`
 
@@ -221,7 +236,9 @@ undefined == null        // true
 
     - `primitive` **==** `value`
 
-4. `Undefined` and `Null` evaluate to `true` 
+<br>
+
+4. `Undefined == Null` evaluate to `true` 
 
 ___
 
@@ -233,7 +250,7 @@ ___
 
 **BINARY `+` operator**
 
-- when using the `+` operator as a binary operator--when it has 2 operands AND `one` of its operands is a `string`, the other operand is coerced to a `string` and `concatenated` with the string operand
+- when using the `+` operator as a binary operator--when it has 2 operands AND **`ONE`** of its operands is a **`string`**, the other operand is coerced to a `string` and `concatenated` with the string operand
 
 ```javascript 
 > 'this whole thing is a string, even this -> ' + 100
@@ -245,6 +262,7 @@ ___
 **Combination of different value types**
 
 ```javascript
+1 + '1'         // '11'
 1 + true;       // 2 
 1 + false;      // 1
 true + false;   // 1
@@ -259,9 +277,9 @@ null + null;    // 0
 **One of the operands is an `object`**
 
 ```javascript
-[1] + 2;        // "12"
+[1] + 2;        // "12" => [1] -> "1" + 2 => "12"
 [1] + '2';      // "12"
-[1, 2] + 3;     // "1,23"
+[1, 2] + 3;     // "1,23" => only elements inside array are separated by comma
 [] + 5;         // "5"
 [] + true;      // "true"
 42 + {};        // "42[object Object]"
@@ -276,7 +294,7 @@ null + null;    // 0
 ```javascript
 [0] - true      // -1 : [0] -> '0' - 1 -> 0 - 1 = -1
 [] - 5          // -5
-[4] - '4'       // 0 : [4] => '4' - '4' , coerce to Number types
+[4] - '4'       // 0 : [4] => '4' - '4' , coerce both to Number types
 ```
 
 ___
@@ -293,9 +311,11 @@ true
 true
 ```
 
-- if **both operands are strings**, JS compares them **`lexicographically`** otherwise converts both operands to `numbers` before comparing them
+- if **both operands are strings**, JS compares them **`lexicographically`** otherwise **attempt to convert both operands to `numbers`** before comparing them
 
 ```javascript
+
+'4' < '3'       // false -- both converted to number
 11 > '9';       // true -- '9' is coerced to 9
 '11' > 9;       // true -- '11' is coerced to 11
 123 > 'a';      // false -- 'a' is coerced to NaN; any comparison with NaN is false
@@ -305,4 +325,6 @@ true > null;    // true -- becomes 1 > 0
 true > false;   // true -- also becomes 1 > 0
 null <= false;  // true -- becomes 0 <= 0
 undefined >= 1; // false -- becomes NaN >= 1
+
+//undefined coercion to number -> undefined
 ```

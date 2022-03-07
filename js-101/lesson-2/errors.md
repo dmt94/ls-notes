@@ -223,6 +223,6 @@ parseJSON(data);    // Logs "There was a SyntaxError parsing JSON data:
 When `both ` are `true`:
 1. a built-in JS function or method CAN `throw an exception` and you need to handle or prevent that exception
 
-2. can't use `guard clause` to prevent exceeption
+2. can't use `guard clause` to prevent exception
 
 

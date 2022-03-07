@@ -46,14 +46,14 @@ ___
 
 ```
 while the user wants to keep going
-  - ask the user for a collection of numbers
-  - extract the largest one from that collection and save it
-  - ask the user if they want to input another collection
+  1 ask the user for a collection of numbers
+  2 extract the largest one from that collection and save it
+  3 ask the user if they want to input another collection
 
 return the saved list of numbers
 ```
 
-`extract the largest one from that collection and save it` is a `sub-process` (which contains its own steps/logic)
+`2 extract the largest one from that collection and save it` is a `sub-process` (which contains its own steps/logic)
 - we can turn this `sub-process into a function`
 
 <br>
@@ -62,18 +62,18 @@ return the saved list of numbers
 
 ```
 while the user wants to keep going
-  - ask the user for a collection of numbers
+  1 ask the user for a collection of numbers
 
-  - iterate through the collection one by one.
+  2 iterate through the collection one by one.
     - save the first value as the starting value.
     - for each iteration, compare the saved value with the current value.
     - if the saved value is greater than or equal to the current number
       - move to the next value in the collection
     - otherwise, if the current value is greater than the saved value
       - reassign the saved value as the current value
-
-  - after iterating through the collection, save the largest value into the list.
-  - ask the user if they want to input another collection
+    - after iterating through the collection, save the largest value into the list.
+    
+  3 ask the user if they want to input another collection
 
 return the saved list of numbers
 ```

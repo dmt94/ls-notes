@@ -27,7 +27,7 @@ anotherFunction();
 
 **Pass-by-Reference?**
 
-- Depending on the operation used on a mutable object (passed as a function's argument), we can refere to it as **pass-by-reference** or **pass-by-value**
+- Depending on the operation used on a mutable object (passed as a function's argument), we can refer to it as **pass-by-reference** or **pass-by-value**
 
 
 ```javascript
@@ -97,7 +97,7 @@ ___
 
 **WHICH OPERATIONS MUTATE THE CALLER?:**
 
-- Functions and methods that mutate their callers are called **destructive functions** or **methods**.
+- `Functions` and `methods` that **mutate** their callers are called **destructive functions** or **methods**.
 
 - Reassignment is not necessarily destructive operation, as can be seen in this code:
 
@@ -137,7 +137,7 @@ ___
 
 - when a `primitive` is passed into a function, that function receives a **COPY** of the original value. It then **`returns`** the value of the argument it received, which is **ANOTHER VALUE**
 
-> All operations on primitive values evaluate as new values
+> **All operations on primitive values evaluate as new values**
 
 ```javascript 
 function foo(number) {
@@ -156,7 +156,7 @@ console.log(newNumber); // 1
 
 `number` and `newNumber` have a value of 1, but the two variables are **NOT** linked in any way -- the values are different numbers that just happen to be equal. 
 
-They do not reference the same value and thus the return value shows.
+They do not reference the same value as the `return` value shows.
 
 <br>
 
@@ -183,4 +183,4 @@ ___
 
 **Assignments and Functions**
 
-- Similarity is a useful mental model. However, it's incorrect to speak of assignment in terms of pass-by-value or pass-by-reference. In JavaScript, those terms **only apply when calling and returning from functions**, not assignments.
+- Similarity between `assignment` and `functions` is a useful mental model. However, it's incorrect to speak of assignment in terms of **pass-by-value** or **pass-by-reference**. In JavaScript, those terms **only apply when calling and returning from functions**, not assignments.

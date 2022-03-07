@@ -1,13 +1,13 @@
-function foo(number) {
-  return number;
-}
+console.log(-[undefined] == 0); //true : -0 and 0
+console.log(-[undefined] === 0); //true : -0 and 0
 
-let number = 1;
-let newNumber = foo(number);
-console.log(number);    // 1
-console.log(newNumber); // 1
+console.log(Object.is(-[undefined], -0)); //true
+console.log(Object.is(-[undefined], 0));  //false
 
-number = 3;
-console.log(number);    // 3
-newNumber = foo(number);
-console.log(newNumber); // 1
+console.log([null] == null); //false 
+console.log([null] == 0); //true
+
+console.log(null == 0); //
+
+
+console.log([undefined] == undefined); //false 

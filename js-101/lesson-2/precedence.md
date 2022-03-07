@@ -38,9 +38,9 @@ let withPar = (3 + 5) * 7; // 56
 
 ___
 
-#### Precedence controls the order of evaluation! ####
+#### Precedence controls the order of ***evaluation***! ####
 
-- when two operations involve operators of the `same precedence`, operations occur left-to-right (or right-to-left for some operators)
+- when two operations involve operators of the `same precedence`, operations occur **left-to-right** (or right-to-left for some operators)
 
 - precedence is a mechanism that determines `which operands get passed to each operator`
 
@@ -115,7 +115,7 @@ ___
 > 5 || 1 / 0            // 5
 ```
 
-- When using `&&` and `||` , the return value is always the value of the operand evaluated `LAST`
+- When using `&&` and `||` , the `return` value is always the value of the operand evaluated **`LAST`**
 
 <br>
 

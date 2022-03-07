@@ -1,8 +1,8 @@
 #### ESLint ####
 
-**linter**
+**LINTER:**
 
-A modular framework that uses **pluggable architecture** to insert **enforcement rules**
+A modular `framework` that uses **pluggable architecture** to insert **enforcement rules**
 ___
 
 Analyzes your code and offers advice about:
@@ -28,21 +28,30 @@ ___
 
 **ESLint** can be installed like any other Node package
 
+```javascript
+
+$ npm install eslint@7.12.1 eslint-cli babel-eslint --save-dev
+```
+
+<br>
+
 **running ESLint :**
 
 `npx eslint fileName.js`
+
+`eslint` takes a JS file as an argument
 
 <br>
 
 **check ESLint version :**
 
-`npx eslint -v`
+**`npx eslint -v`**
 
 <br>
 
 **Configuring ESLint**
 
-1. make a `.eslintrc.yml` file in the parent directory that holds the directories and files you want to use ESLint on.
+1. make a **`.eslintrc.yml`** file in the parent directory that holds the directories and files you want to use ESLint on.
 
 Used for LS:
 
@@ -267,9 +276,13 @@ $ npx eslint hello.js
 
 **If no problem, no output !**
 
+___
+
 
 ##### Quick Fix option if problems found : #####
 
 `npx eslint --fix fileName.js`
 
-Be careful when using, won't always work for every issue found.
+- Be careful when using, won't always work for every issue found.
+
+- Helpful to use quick fix for formatting errors, but not for editing actual code

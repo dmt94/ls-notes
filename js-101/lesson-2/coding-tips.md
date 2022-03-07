@@ -104,6 +104,8 @@ function foo() {
 
 - good practice to use on constants that should never be modified 
 
+- `Object.freeze` only works one level deep
+
 ```javascript 
 const CARDS = Object.freeze([1, 2, 3]);
 CARDS.push(4); // TypeError: Cannot add property 3, object is not extensible
@@ -134,7 +136,7 @@ A function has side effects if it does **any** of the following:
 
 3. `Reads from or writes` to a file, network connection, browser, or the system hardware 
 
-  - Side effects include writing to the console log and reading input from the terminal
+  - Side effects include writing to the **`console log`** and reading input from the terminal
 
 <br>
 
@@ -143,6 +145,8 @@ A function has side effects if it does **any** of the following:
 <br>
 
 5. `Calls another function that has side effects`
+
+<br>
 
 **Functions that have side effects** :
 
@@ -310,7 +314,7 @@ ___
 
 - name your functions through the eyes of its future reader, make it readable and simple
 
-- know when to use a regular `while` loop vs a generic `whilte (true) loop`
+- know when to use a regular `while` loop vs a generic `while (true) loop`
 
 <br>
 

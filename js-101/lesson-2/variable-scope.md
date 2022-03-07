@@ -4,11 +4,11 @@
 
 1. `global scope`
 
-- variables that are available across your program. You can use them anywhere in the program, either globally or from inside a function or a block.
+- variables that are available across your program. You can use them **anywhere** in the program, either globally or from inside a function or a block.
 
 2. `local scope`
 
-A `variable's scope` is the part of the program that can **access** that `variable` by `name`
+- a `variable's scope` is the ***part of the program*** that can **access** that `variable` by `name`
 
 ___
 
@@ -44,7 +44,7 @@ __
 
 <br>
 
-**Function invocation**  allows for variables to be created and initialized with their values. Variables are immediately **discarded** once the function finishes execution and control `returns` to the main flow of the program.
+**Function invocation**  allows for ***variables*** to be ***created*** and ***initialized*** with their values. Variables are immediately **discarded** once the function finishes execution and control `returns` to the main flow of the program.
 
 <br>
 
@@ -54,7 +54,7 @@ function aFunc() {
 }
 ```
 
-- since `aFunc` is never invoked, the variable `foo` is never created. BUT we `foo` is still within the scope of `aFunc` and can be referred to as such.
+- since `aFunc` is never invoked, the variable `foo` is never created. BUT `foo` is still within the scope of `aFunc` and can be referred to as such.
 
 __
 
