@@ -1,13 +1,13 @@
-console.log(-[undefined] == 0); //true : -0 and 0
-console.log(-[undefined] === 0); //true : -0 and 0
+let title = "Flintstone Family Members";
 
-console.log(Object.is(-[undefined], -0)); //true
-console.log(Object.is(-[undefined], 0));  //false
+console.log(title.length);
+console.log(title.padStart(Math.floor(32.5)));
 
-console.log([null] == null); //false 
-console.log([null] == 0); //true
+/* 
+index needs to be over length = 25 
+ 25 < index > 40
 
-console.log(null == 0); //
-
-
-console.log([undefined] == undefined); //false 
+ 40 - 25 = 15
+ x / 2 = 7.5 
+ 25 + 7.5 = 32.5
+*/
