@@ -1,0 +1,21 @@
+/*
+sort the array so that the sub-arrays
+are ordered based on the [sum of the odd numbers]
+that they contain.
+
+- add odd inner array
+- sort outer array based on (ascending)
+*/
+
+let beforeOdd = [[1, 6, 7], [1, 5, 3], [1, 8, 3]];
+
+beforeOdd.sort((a, b) => {
+  let oddSumA = a.filter(num => num % 2 === 1)
+    .reduce((sum, next) => sum + next);
+  let oddSumB = b.filter(num => num % 2 === 1)
+    .reduce((sum, next) => sum + next);
+  return oddSumA - oddSumB;
+});
+
+console.log(beforeOdd);
+//[ [ 1, 8, 3 ], [ 1, 6, 7 ], [ 1, 5, 3 ] ]
